@@ -1,5 +1,5 @@
-# Flask Heroku Example
-_(This repo is part of our [Free Flask Tutorial](https://flask-tutorial.com))_
+# Flask Heroku Tutorial
+_(This repo is part of the [Free Flask Tutorial](https://flask-tutorial.com))_
 
 This repo contains some sample code to deploy a simple (but complete) Flask application to [Heroku](https://heroku.com). The deployed app counts with the following features:
 
@@ -15,6 +15,7 @@ _(Assuming you've already created an account with Heroku)_
 ##### 1. Clone the repo
 ```bash
 $ git clone https://github.com/rmotr-curriculum/flask-heroku-example.git && cd flask-heroku-example
+$ git clone https://github.com/suziray/nextpath.git && cd nextpath
 ```
 
 ##### 2. Login to Heroku
@@ -24,12 +25,13 @@ $ heroku login
 
 ##### 3. Create your Heroku apps
 ```bash
-$ heroku create
+$ heroku create ct-nextpath
 ```
 
 ##### 4. Set the Python Path
 ```bash
 $ heroku config:set PYTHONPATH=flask_heroku_example
+$ heroku config:set PYTHONPATH=nextpath
 ```
 
 ##### 5. Add Postgres Add-on to your Heroku app
