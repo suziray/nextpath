@@ -40,9 +40,9 @@ create table userprojectrel (
 drop table if exists companyprojectrel;
 create table companyprojectrel (
   id serial PRIMARY KEY,
-  company_id integer REFERENCES user (id),
+  company_id integer REFERENCES company (id),
   project_id integer REFERENCES project (id),
-  list_time timestampe not null,
+  list_time timestamp not null,
   start_time timestamp not null,
   expire_time timestamp not null
 );
