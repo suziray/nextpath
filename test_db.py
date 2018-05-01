@@ -7,7 +7,7 @@ DATABASE_URL = os.environ.get('DATABASE_URL')
 def test_db():
     conn = psycopg2.connect(DATABASE_URL)
     cur = conn.cursor()
-    cur.execute("SELECT * FROM country;")
+    cur.execute("SELECT * FROM user;")
     for country in cur:
         print(country)
 
