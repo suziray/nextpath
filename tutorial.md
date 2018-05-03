@@ -57,7 +57,7 @@ _(You need to have installed Postgres locally to run the app. For a simpler sqli
 
 ```bash
 # Activate the virtualenv
-$ source venv/bin/activate
+$ source nextp/bin/activate
 # Install dependencies
 $ pip install -r requirements.txt
 # Run the app
