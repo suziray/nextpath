@@ -1,8 +1,7 @@
 import os
 import psycopg2
 from flask import Flask, render_template, g
-from flask import Flask, redirect, url_for, session, request, jsonify
-from flask_oauthlib.client import OAuth
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
@@ -15,6 +14,7 @@ def connect_db():
 @app.before_request
 def before_request():
     g.db_conn = connect_db()
+
 
 @app.route('/')
 def index():

@@ -46,5 +46,3 @@ create table companyprojectrel (
   start_time timestamp not null,
   expire_time timestamp not null
 );
-
-
