@@ -1,7 +1,7 @@
 import os
 import psycopg2
-import OAuth
 from flask import Flask, render_template, g
+from flask_oauthlib.client import OAuth
 
 
 app = Flask(__name__)
