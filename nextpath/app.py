@@ -67,7 +67,7 @@ def login():
 
 @app.route('/logout')
 def logout():
-    #session.pop('linkedin_token', None)
+    session.pop('linkedin_token', None)
     session.clear()
     logging.warning(session)
     return url_for('index')
