@@ -1,5 +1,5 @@
 import os
-#import psycopg2
+import psycopg2
 from flask import Flask, render_template, g, redirect, url_for, session, request, jsonify
 from flask_oauthlib.client import OAuth
 
@@ -12,26 +12,21 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
 toolbar = DebugToolbarExtension(app)
 
 
-# def connect_db():
-#     return psycopg2.connect(os.environ.get('DATABASE_URL'))
+def connect_db():
+    return psycopg2.connect(os.environ.get('DATABASE_URL'))
 
 
-# @app.before_request
-# def before_request():
-#     g.db_conn = connect_db()
+@app.before_request
+def before_request():
+    g.db_conn = connect_db()
 
 
-# @app.route('/')
-# def index():
-#     cur = g.db_conn.cursor()
-#     cur.execute("SELECT * FROM country;")
-#     return render_template('index.html', countries=cur.fetchall())
+@app.route('/usr')
+def get_usr():
+    cur = g.db_conn.cursor()
+    cur.execute("SELECT * FROM usr;")
+    return render_template('index.html', users=cur.fetchall())
 
-# app = Flask(__name__)
-
-
-app.debug = True
-# app.secret_key = 'development'
 oauth = OAuth(app)
 
 linkedin = oauth.remote_app(

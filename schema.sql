@@ -2,10 +2,21 @@ create table usr (
   id serial PRIMARY KEY,
   first_name text not null,
   last_name text not null,
-  experience text,
-  education text,
-  skill text
+  title text,
+  company text,
+  education text
 );
+
+create table experience {
+  id serial PRIMARY KEY,
+  usr_id integer REFERENCES usr (id),
+  title text,
+  company text,
+  duration int,
+  description text,
+  tags text,
+  curr boolean
+};
 
 create table project (
   id serial PRIMARY KEY,
