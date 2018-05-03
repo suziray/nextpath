@@ -43,6 +43,8 @@ $ # Create the initial schema
 $ heroku pg:psql < schema.sql
 $ # Load some initial testing data
 $ heroku pg:psql < initial_data.sql
+$ # Clear database
+$ heroku pg:reset DATABASE
 ```
 
 ##### 7. Deploy & Profit
@@ -54,11 +56,11 @@ $ git push heroku master
 _(You need to have installed Postgres locally to run the app. For a simpler sqlite alternative, please check the aforementioned tutorial)_
 
 ```bash
-# Create the virtualenv
-$ mkvirtualenv flask-heroku-example
+# Activate the virtualenv
+$ source venv/bin/activate
 # Install dependencies
 $ pip install -r requirements.txt
 # Run the app
-$ python flask_heroku_example/main.py
+$ python nextpath/main.py
 # Now point your browser to localhost:5000
 ```
