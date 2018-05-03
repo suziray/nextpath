@@ -53,6 +53,7 @@ linkedin = oauth.remote_app(
 
 @app.route('/')
 def index():
+    logging.warning(session)
     if 'linkedin_token' in session:
         me = linkedin.get('people/~')
         return jsonify(me.data)
@@ -66,9 +67,10 @@ def login():
 
 @app.route('/logout')
 def logout():
-    session.pop('linkedin_token', None)
-    return redirect(url_for('index'))
-
+    #session.pop('linkedin_token', None)
+    session.clear()
+    logging.warning(session)
+    return url_for('index')
 
 @app.route('/login/authorized')
 def authorized():
