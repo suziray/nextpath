@@ -7,7 +7,7 @@ create table usr (
   education text
 );
 
-create table experience {
+create table experience (
   id serial PRIMARY KEY,
   usr_id integer REFERENCES usr (id),
   title text,
@@ -16,7 +16,7 @@ create table experience {
   description text,
   tags text,
   curr boolean
-};
+ );
 
 create table project (
   id serial PRIMARY KEY,
