@@ -270,7 +270,7 @@ def upload_file():
 def dashboard():
     company_id = request.args.get('id')
     cur = g.db_conn.cursor()
-    sql = "SELECT company.name FROM company where company.company_id= '" + company_id +"'"
+    sql = "SELECT company.name FROM company where company.id= '" + company_id +"'"
     cur.execute(sql)
     name = cur.fetchall()
     cur = g.db_conn.cursor()
