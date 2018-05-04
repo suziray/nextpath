@@ -38,6 +38,17 @@ def get_usr(first_name):
     return render_template('welcome.html', users=cur.fetchall())
 
 
+def match(usr_tags, chg_skills):
+    chg_skills = chg_skills.split(',')
+    for tags in usr_tags:
+        ts = tags.split(',')
+        for t in ts:
+            for s in chg_skills:
+                if t == s:
+                    return True
+    return False
+
+
 linkedin = oauth.remote_app(
     'linkedin',
     consumer_key='77u05yrx7rjl2w',
@@ -118,9 +129,31 @@ def profile():
         me = linkedin.get('people/~')
         session['name'] = usr(dict(me.data)).fetch_first_name()
         cur = g.db_conn.cursor()
-        prf_sql = "SELECT experience.title, experience.company, experience.duration, experience.description, experience.tags FROM experience,usr where experience.usr_id=usr.id AND usr.first_name= '" + session['name'] + "'"
+        prf_sql = "SELECT experience.title, experience.company, experience.duration, experience.description, experience.tags FROM experience,usr WHERE experience.usr_id=usr.id AND usr.first_name= '" + session['name'] + "'"
         cur.execute(prf_sql)
         return render_template('profile.html', experiences=cur.fetchall())
+    return redirect(url_for('login'))
+
+
+@app.route('/challenges')
+def profile():
+    logging.warning(session)
+    if 'linkedin_token' in session:
+        me = linkedin.get('people/~')
+        session['name'] = usr(dict(me.data)).fetch_first_name()
+        cur = g.db_conn.cursor()
+        sql = "SELECT project.title, project.skill, project.description, companyprojectrel.start_time, companyprojectrel.expire_time, company.url FROM project,companyprojectrel,company where project.id=companyprojectrel.project_id AND companyprojectrel.company_id=company.id"
+        cur.execute(sql)
+        projects = cur.fetchall()
+        sql = "SELECT experience.tags FROM experience,usr WHERE experience.usr_id=usr.id AND usr.first_name= '" + session['name'] + "'"
+        cur.execute(sql)
+        tags = cur.fetchall()
+        valid_projects = []
+        for proj in projects:
+            if match(tags, proj[1]):
+                valid_projects.append(proj)
+        logging.warning(valid_projects)
+        return render_template('profile.html', challenges=valid_projects)
     return redirect(url_for('login'))
 
 
