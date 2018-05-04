@@ -35,6 +35,10 @@ INSERT INTO experience (id, usr_id, title, company, duration, description, tags,
 INSERT INTO project (id, title, skill, description, create_time) VALUES (1,'Digit Recognition','Machine Learning,Neural Networks','Handwritten Digit Recognition using Convolutional Neural Networks','2018-05-03 21:23:54');
 INSERT INTO project (id, title, skill, description, create_time) VALUES (2,'The Deal Competition','Investment Banking,Finance,Valuation','In this project, participants are required to function as financial advisor to work on a deal involving a publicly listed company and a target company within the same industry in emerging Asia.You will analyze the hypothetical acquisition and explain your strategic rationale for the acquisition and the issues requiring consideration.','2018-05-03 21:23:54');
 INSERT INTO project (id, title, skill, description, create_time) VALUES (3,'Google Advertisement team product management challenge','Product Management,Software Development','Develop an innovative google cloud product','2018-02-02 10:23:54');
+INSERT INTO project (id, title, skill, description, create_time) VALUES (4,'Google Brain Bussiness Challenge','Product Management,Software Development,deep learning,machine learning','Develop an innovative plan to apply google brain technogloy to solve business problems','2018-02-02 10:23:54');
+INSERT INTO project (id, title, skill, description, create_time) VALUES (5,'Google venture case competition','Product Management,business strategy,Valuation,technology,software engineering','Google VC competition asks you to complete an investor pitch for a potential target startup company','2018-04-02 11:00:00');
+INSERT INTO project (id, title, skill, description, create_time) VALUES (6,'The next gen payment system','fintech,software engineering,blockchain,payment,machine learning,big data','Deliver technical proposal for blockchain-powered transaction system to revoluationize the bank to bank payment system ','2018-06-01 9:00:00');
+
 
 
 -- Company
@@ -53,6 +57,9 @@ INSERT INTO usrprojectrel (id, usr_id, project_id, score, register_time, finish_
 INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time) VALUES (1,3,3, '2018-02-02 08:00:00', '2018-02-02 12:00:00', '2018-10-05 12:00:00');
 INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time) VALUES (2,1,2, '2018-03-01 09:00:00', '2018-03-01 12:00:00', '2018-09-01 12:00:00');
 INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time) VALUES (3,2,1, '2018-01-01 07:00:00','2018-01-01 9:00:00', '2018-12-05 12:00:00');
+INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time) VALUES (4,3,4, '2018-01-01 07:00:00','2018-01-01 9:00:00', '2018-12-05 12:00:00');
+INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time) VALUES (5,3,5, '2018-01-01 07:00:00','2018-01-01 9:00:00', '2018-12-05 12:00:00');
+INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time) VALUES (6,1,6, '2018-06-01 07:00:00','2018-06-01 9:30:00', '2018-12-05 12:00:00');
 
 
 
