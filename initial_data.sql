@@ -23,3 +23,29 @@ INSERT INTO experience (id, usr_id, title, company, duration, description, tags,
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (2, 2, 'Marketing Analyst', 'Yahoo', '2', 'Online marketing for ICOs', 'blockchain, press release, brand development, pr, blogging', FALSE);
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (1, 1, 'Investment Manager', 'Rothschild', '2', 'LBO', 'valuation, presentation, excel, analytics', TRUE);
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (2, 1, 'Marketing Analyst', 'Yahoo', '2', 'Online marketing for ICOs', 'blockchain, press release, brand development, pr, blogging', FALSE);
+
+-- Project
+INSERT INTO project (id, title, skill, description, create_time) VALUES (1,'Digit Recognition','Machine Leanring,Neural Networks','Handwritten Digit Recognition using Convolutional Neural Networks','2018-05-03 21:23:54');
+INSERT INTO project (id, title, skill, description, create_time) VALUES (2,'The Deal Competition','Investment Banking,Finance,evaluation','In this project, participants are required to function as financial advisor to work on a deal involving a publicly listed company and a target company within the same industry in emerging Asia.You will analyze the hypothetical acquisition and explain your strategic rationale for the acquisition and the issues requiring consideration.','2018-05-03 21:23:54');
+INSERT INTO project (id, title, skill, description, create_time) VALUES (3,'Google Advertisement team product management challenge','product management','Develop google cloud product','2018-02-02 10:23:54');
+
+
+-- Company
+INSERT INTO company (id, name, type, url, size) VALUES (1, 'JP Morgan','Investment Banking,finance','https://www.jpmorganchase.com', 3);
+INSERT INTO company (id, name, type, url, size) VALUES (2, 'Kensho Technologies','data analytics,big data,artificial intelligence,machine learning','https://www.jpmorganchase.com', 1);
+INSERT INTO company (id, name, type, url, size) VALUES (3, 'Google','software engineering,technology,advertisement,product management','https://www.google.com', 3);
+
+-- user project relationship 
+INSERT INTO usrprojectrel (id, urs_id, project_id, score, register_time, finish_time) VALUES (1, 4, 3, 98, '2018-02-03 10:00:54', '2018-02-04 10:00:00');
+INSERT INTO usrprojectrel (id, urs_id, project_id, score, register_time, finish_time) VALUES (2, 2, 3, 98, '2018-02-03 10:05:00', '2018-02-04 11:00:00');
+INSERT INTO usrprojectrel (id, urs_id, project_id, score, register_time, finish_time) VALUES (3, 3, 1, 95, '2018-01-01 10:00:00', '2018-01-01 14:00:00');
+INSERT INTO usrprojectrel (id, urs_id, project_id, score, register_time, finish_time) VALUES (4, 1, 1, 95, '2018-01-01 11:00:00', '2018-01-01 15:00:00');
+
+
+-- company project relationship
+INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time) VALUES (1,3,3, '2018-02-02 08:00:00', '2018-02-02 12:00:00', '2018-02-05 12:00:00');
+INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time) VALUES (2,2,1, '2018-01-01 07:00:00','2018-01-01 9:00:00', '2018-01-05 12:00:00');
+
+
+
+
