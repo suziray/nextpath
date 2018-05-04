@@ -39,7 +39,7 @@ def get_usr(first_name):
 
 
 def match(usr_tags, chg_skills):
-    chg_skills = chg_skills[0].split(',')
+    chg_skills = chg_skills.split(',')
     logging.warning(chg_skills)
     for tags in usr_tags:
         ts = tags[0].split(',')
