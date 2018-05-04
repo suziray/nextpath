@@ -64,6 +64,15 @@ def index():
         return get_usr(session['name'])
     return redirect(url_for('login'))
 
+@app.route('/welcome')
+def welcome():
+    logging.warning(session)
+    if 'linkedin_token' in session:
+        me = linkedin.get('people/~')
+        session['name'] = usr(dict(me.data)).fetch_first_name()
+        return render_template('welcome.html', usr_first_name=session['name'])
+    return redirect(url_for('login'))
+
 
 @app.route('/login')
 def login():
