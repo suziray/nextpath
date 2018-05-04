@@ -34,9 +34,9 @@
         <h1>Challenges</h1>
         <ul class="challenges">
         {% for chg in challenges %}
-          <li href="http://ct-nextpath.herokuapp.com/challenge">
+          <li onclick="window.location.href='http://ct-nextpath.herokuapp.com/challenge'">
             <img border="0" alt="logo" src='{{ chg[5] }}' />
-            <h2 class="title" href="http://ct-nextpath.herokuapp.com/challenge">{{ chg[0] }}</h2>
+            <h2 class="title">{{ chg[0] }}</h2>
             <p class="shortDesc">{{ chg[2] }}</p>
             <h3 class="skillsReq">Time limit: {{ chg[6] }} hours</h3>
             <h4 class="time">Released on: {{ chg[3].date() }}</h4>
