@@ -9,7 +9,7 @@ import json
 
 from werkzeug.utils import secure_filename
  
-UPLOAD_FOLDER = 'static'
+UPLOAD_FOLDER = '/static'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 
@@ -137,11 +137,7 @@ def profile():
         cur = g.db_conn.cursor()
         prf_sql = "SELECT experience.title, experience.company, experience.duration, experience.description, experience.tags FROM experience,usr WHERE experience.usr_id=usr.id AND usr.first_name= '" + session['name'] + "'"
         cur.execute(prf_sql)
-        experiences=cur.fetchall()
-        tags = []
-        for i in range(len(experiences)):
-            experiences[i][4] = experiences[i][4].split(',')
-        return render_template('profile.html', experiences=experiences)
+        return render_template('profile.html', experiences=cur.fetchall())
     return redirect(url_for('login'))
 
 
@@ -193,4 +189,3 @@ def upload_file():
 
 if __name__ == '__main__':
     app.run()
-
