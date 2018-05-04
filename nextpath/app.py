@@ -44,7 +44,7 @@ def match(usr_tags, chg_skills):
         ts = tags[0].split(',')
         for t in ts:
             for s in chg_skills:
-                if t == s:
+                if t.lower() == s.lower():
                     return True
     return False
 
