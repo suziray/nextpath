@@ -248,4 +248,5 @@ span.tag {
 
 .challenges.profile li {
     list-style-type: none !important;
+    position:relative;
 }
