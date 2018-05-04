@@ -207,7 +207,7 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('index'))
-    return render_template("upload.html")
+    return render_template("challenge.html")
 
 if __name__ == '__main__':
     app.run()
