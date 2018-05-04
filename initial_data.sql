@@ -23,7 +23,7 @@ INSERT INTO experience (id, usr_id, title, company, duration, description, tags,
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (2, 2, 'Marketing Analyst', 'Yahoo', '2', 'Online marketing for ICOs', 'Blockchain,Press Release,Brand Development,Pr,Blogging', FALSE);
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (3, 1, 'Investment Manager', 'Rothschild', '2', 'LBO', 'Valuation,Presentation,Excel,Finance', TRUE);
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (4, 1, 'Marketing Analyst', 'Yahoo', '2', 'Online marketing for ICOs', 'Blockchain,Press Release,Brand Development,Pr,Blogging', FALSE);
-INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (5, 1, 'Software Engineer', 'Apple', '1', 'Software engineering of Apple Watch', 'Software Development,Data,Machine Learning,', FALSE);
+INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (5, 1, 'Software Engineer', 'Apple', '1', 'Software engineering of Apple Watch', 'Software Development,Data,Machine Learning', FALSE);
 
 -- Project
 INSERT INTO project (id, title, skill, description, create_time) VALUES (1,'Digit Recognition','Machine Learning,Neural Networks','Handwritten Digit Recognition using Convolutional Neural Networks','2018-05-03 21:23:54');
