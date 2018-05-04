@@ -189,7 +189,7 @@ def challenge():
                     filename = secure_filename(file.filename)
                     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                     return redirect(url_for('index'))
-                return render_template("challenge.html")
+                return render_template("index.html")
 
         me = linkedin.get('people/~')
         session['name'] = usr(dict(me.data)).fetch_first_name()
