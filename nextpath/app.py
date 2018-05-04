@@ -265,5 +265,18 @@ def upload_file():
             return redirect(url_for('index'))
     return render_template("challenge.html")
 
+
+@app.route('/dashboard',methods = ['GET'])
+def dashboard():
+    company_id = request.args.get('id')
+    cur = g.db_conn.cursor()
+    sql = "SELECT project.title, project.skill, project.description, companyprojectrel.start_time, companyprojectrel.expire_time, company.url, companyprojectrel.time_limit FROM project,companyprojectrel,company where project.id=companyprojectrel.project_id AND companyprojectrel.company_id= '" + company_id +"'"
+    cur.execute(sql)
+    projects = cur.fetchall()
+    return render_template('dashboard.html', challenges=projects, usr_first_name=session['name'])
+    return redirect(url_for('login'))
+
+
+
 if __name__ == '__main__':
     app.run()
