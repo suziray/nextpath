@@ -21,3 +21,5 @@ INSERT INTO usr (id, first_name, last_name, title, company, education) VALUES (4
 -- Experience
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (1, 2, 'Product Manager', 'Verizon', '2', 'Post-merger integration with Oath', 'ui design, product management, presentation, marketing', TRUE);
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (2, 2, 'Marketing Analyst', 'Yahoo', '2', 'Online marketing for ICOs', 'blockchain, press release, brand development, pr, blogging', FALSE);
+INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (1, 1, 'Investment Manager', 'Rothschild', '2', 'LBO', 'valuation, presentation, excel, analytics', TRUE);
+INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (2, 1, 'Marketing Analyst', 'Yahoo', '2', 'Online marketing for ICOs', 'blockchain, press release, brand development, pr, blogging', FALSE);

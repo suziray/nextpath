@@ -11,6 +11,7 @@ import json
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
 toolbar = DebugToolbarExtension(app)
+oauth = OAuth(app)
 
 
 class usr:
@@ -34,9 +35,8 @@ def before_request():
 def get_usr(first_name):
     cur = g.db_conn.cursor()
     cur.execute("SELECT * FROM usr where first_name = '" + first_name + "'")
-    return render_template('index.html', users=cur.fetchall())
+    return render_template('welcome.html', users=cur.fetchall())
 
-oauth = OAuth(app)
 
 linkedin = oauth.remote_app(
     'linkedin',
@@ -51,7 +51,6 @@ linkedin = oauth.remote_app(
     access_token_method='POST',
     access_token_url='https://www.linkedin.com/uas/oauth2/accessToken',
     authorize_url='https://www.linkedin.com/uas/oauth2/authorization',
-
 )
 
 
@@ -61,16 +60,20 @@ def index():
     if 'linkedin_token' in session:
         me = linkedin.get('people/~')
         session['name'] = usr(dict(me.data)).fetch_first_name()
-        return get_usr(session['name'])
-    return redirect(url_for('login'))
+        return render_template('index.html', usr_first_name=session['name'])
+    else:
+        return redirect(url_for('login'))
 
-@app.route('/welcome')
-def welcome():
+
+@app.route('/profile')
+def profile():
     logging.warning(session)
     if 'linkedin_token' in session:
         me = linkedin.get('people/~')
         session['name'] = usr(dict(me.data)).fetch_first_name()
-        return render_template('welcome.html', usr_first_name=session['name'])
+        cur = g.db_conn.cursor()
+        cur.execute("SELECT experience.title, experience.company, experience.duration, experience.description, experience.tags FROM experience JOIN usr ON experience.usr_id=usr.id WHERE usr.first_name='" + session['name'] + "'")
+        return render_template('profile.html', experiences=cur.fetchall())
     return redirect(url_for('login'))
 
 
@@ -85,6 +88,7 @@ def logout():
     session.clear()
     logging.warning(session)
     return url_for('index')
+
 
 @app.route('/login/authorized')
 def authorized():

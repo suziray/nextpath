@@ -14,12 +14,14 @@
   <body>
     <div class="container">
       <div>
-        <h1>At NextPath, we empower recruiters to innovatively evaluate candidates through project based recruitment, so they can hire and retain the best talent</h1>
-        <ul>
-          {% for usr in users %}
-            <li>{{ usr[0] }} - <b>{{ usr[1] }}</b></li>
-          {% endfor %}
-        </ul>
+        <h1>Welcome, {{ usr_first_name }}</h1>
+        <ul>At NextPath, we empower recruiters to innovatively evaluate candidates through project based recruitment, so they can hire and retain the best talent</ul>
+        <input type="button" onclick="location.href='http://ct-nextpath.herokuapp.com/challenges';" value="Challenges" />
+        <input type="button" onclick="location.href='http://ct-nextpath.herokuapp.com/companies';" value="Companies" />
+        <input type="button" onclick="location.href='http://ct-nextpath.herokuapp.com/challenges';" value="Explore" />
+        <input type="button" onclick="location.href='http://ct-nextpath.herokuapp.com/mychallenges';" value="Accepted Challanges" />
+        <input type="button" onclick="location.href='http://ct-nextpath.herokuapp.com/profile';" value="Add Experience" />
+        <input type="button" onclick="location.href='http://ct-nextpath.herokuapp.com/logout';" value="Sign Out" />
       </div>
     </div>
 
