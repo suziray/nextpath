@@ -72,7 +72,7 @@ def profile():
         me = linkedin.get('people/~')
         session['name'] = usr(dict(me.data)).fetch_first_name()
         cur = g.db_conn.cursor()
-        cur.execute("SELECT exp.title, exp.company, exp.duration, exp.description, exp.tags FROM experience exp JOIN usr u ON exp.usr_id=u.id WHERE u.first_name='" + session['name'] + "'")
+        cur.execute("SELECT exp.title, exp.company, exp.duration, exp.description, exp.tags FROM experience exp JOIN usr u ON exp.usr_id=u.id AND u.first_name='" + session['name'] + "'")
         logging.warning(session['name'])
         return render_template('profile.html', experiences=cur.fetchall())
     return redirect(url_for('login'))
