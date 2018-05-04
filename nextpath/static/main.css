@@ -3,9 +3,19 @@
   color: #2699fb;
 }
 
+body {
+	background-color: #f7fafd;
+}
+
 .mainContainer {
     max-width: 1150px;
     margin: auto;
+}
+
+.h1, h1 {
+    font-size: 36px;
+    font-weight: 100;
+    margin-bottom: 30px;
 }
 
 /* Sidebar */
@@ -13,6 +23,11 @@
 .sideNav {
 	float:left;
 	width:25%;
+	padding-top:30px;
+}
+
+.sideNav ul {
+	padding-left:0;
 }
 
 .sideNav ul li {
@@ -24,21 +39,88 @@
     border: none;
     font-weight: 700;
     text-transform: uppercase;
-    line-height: 2.2;
+    line-height: 2;
+    font-family: roboto;
+    color: #2699fbe3;
+    font-size: 12px;
+    letter-spacing: 0.25px;
 }
 
 
 
 /* Content */
 .container {
-    border: 3px solid #2699fb;
+    box-shadow: 0px 0px 126px -22px #d9edff;
+    border: 0px solid #a9d8ff;
     margin-top: 23px;
     float: left;
     margin-left: 25px;
-    width:72%;
+    padding: 30px 70px 11px 43px;
+    background: #ffffff;
+    border-top: 1px solid;
 }
 
 /* Challenges */
 .challenges img {
 	width:100px;
+}
+
+.challenges ul li {
+	list-style-type: none;
+}
+
+.challenges li {
+    overflow: hidden;
+    margin-bottom: 27px;
+    padding: 23px;
+    box-shadow: 0px 0px 4px 0px #dedede;
+    background: #ffffff;
+    border: 0px solid #e0e0e0;
+}
+
+h2.title {
+    font-size: 17px;
+    color: #000;
+    font-weight: 300;
+}
+
+h3.skillReq {
+    font-size: 11px;
+    font-weight: 700;
+    background: #f7c533;
+    width: 111px;
+    padding: 4px 5px 3px;
+    text-align: center;
+    color: #ffffff;
+    font-family: roboto;
+    text-transform: uppercase;
+    letter-spacing: 0.25px;
+
+}
+
+p.shortDesc {
+    font-family: roboto;
+    color: #000;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+h4.time {
+    font-size: 11px;
+    font-weight: 700;
+    background: #31a952;
+    width: 154px;
+    padding: 4px 5px 3px;
+    text-align: center;
+    color: #ffffff;
+    font-family: roboto;
+    text-transform: uppercase;
+    letter-spacing: 0.25px;
+    float: left;
+    width: auto;
+    clear: left;
+}
+
+h4.time.end {
+	background: background;
 }
