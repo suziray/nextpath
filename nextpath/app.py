@@ -235,7 +235,7 @@ def mychallenges():
         session['name'] = usr(dict(me.data)).fetch_first_name()
         cur = g.db_conn.cursor()
 
-        sql = "SELECT project.title, project.skill, project.description, companyprojectrel.start_time, companyprojectrel.expire_time, company.url, companyprojectrel.time_limit FROM project,companyprojectrel,company,usrprojectrel,usr where project.id=companyprojectrel.project_id AND companyprojectrel.company_id=company.id and usrprojectrel.usr_id =usr.id and usrprojectrel.project_id=project.id AND companyprojectrel.company_id=company.id AND usr.name='" + str(session['name']) + "'"
+        sql = "SELECT project.title, project.skill, project.description, companyprojectrel.start_time, companyprojectrel.expire_time, company.url, companyprojectrel.time_limit FROM project,companyprojectrel,company,usrprojectrel,usr where project.id=companyprojectrel.project_id AND companyprojectrel.company_id=company.id and usrprojectrel.usr_id =usr.id and usrprojectrel.project_id=project.id AND companyprojectrel.company_id=company.id AND usr.first_name='" + str(session['name']) + "'"
         cur.execute(sql)
         projects = cur.fetchall()
 
