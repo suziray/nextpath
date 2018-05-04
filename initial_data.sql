@@ -15,7 +15,7 @@
 -- Users
 INSERT INTO usr (id, first_name, last_name, title, company, education) VALUES (1, 'Ray', 'Su', 'Investment Manager', 'Rothschild', 'Cornell Tech');
 INSERT INTO usr (id, first_name, last_name, title, company, education) VALUES (2, 'Alex', 'Johnson-Leung', 'Product Manager', 'Verizon', 'New York University');
-INSERT INTO usr (id, first_name, last_name, title, company, education) VALUES (3, 'Chaoping (Charles)', 'Deng', 'Data Scientist', 'Two Sigma', 'Cornell University');
+INSERT INTO usr (id, first_name, last_name, title, company, education) VALUES (3, 'Charles', 'Deng', 'Data Scientist', 'Two Sigma', 'Cornell University');
 INSERT INTO usr (id, first_name, last_name, title, company, education) VALUES (4, 'Jonathan', 'Kroll', 'Partner', 'Founders Fund', 'UCSB');
 
 -- Experience
