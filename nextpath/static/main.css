@@ -259,7 +259,7 @@ span.tag {
   text-align: center;
   line-height: 1.2;
   color: #38b96a !important;
-  font-weight: 700;
+  font-weight: 700 !important;
   font-size: 11px;
 }
 
