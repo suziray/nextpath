@@ -41,7 +41,7 @@ body {
     text-transform: uppercase;
     line-height: 2;
     font-family: roboto;
-    color: #2699fbe3;
+    color: #2699fb;
     font-size: 12px;
     letter-spacing: 0.25px;
 }
@@ -60,7 +60,6 @@ body {
     border-top: 1px solid;
     width:72%;
     min-height:90vh;
-
 }
 
 /* Challenges */
