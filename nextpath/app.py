@@ -15,10 +15,13 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 toolbar = DebugToolbarExtension(app)
 oauth = OAuth(app)
 
+
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static/uploads')
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 class usr:
     def __init__(self,usr_dict):
@@ -183,8 +186,8 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            basedir = os.path.abspath(os.path.dirname(__file__))
-            file.save(os.path.join(basedir, app.config['UPLOAD_FOLDER'], filename))
+            #basedir = os.path.abspath(os.path.dirname(__file__))
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('login'))
     return render_template("upload.html")
 
