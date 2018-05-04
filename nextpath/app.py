@@ -142,8 +142,9 @@ def profile():
         cur.execute(prf_sql)
         experiences=cur.fetchall()
         tags = []
-        for i in range(len(experiences[4])):
-            experiences[4][i] = experiences[4][i][0].split(',')
+        for i in range(len(experiences)):
+            logging.warning(experiences[i][4])
+            experiences[i][4] = experiences[i][4].split(',')
         return render_template('profile.html', experiences=experiences)
     return redirect(url_for('login'))
 
