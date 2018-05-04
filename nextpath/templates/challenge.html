@@ -37,8 +37,8 @@
             <img border="0" alt="logo" src='{{ challenge[5] }}' />
             <h2 class="title">{{ challenge[0] }}</h2>
             <p class="shortDesc">{{ challenge[2] }}</p>
-            <h4 class="time" id="countdown"></h4>
-            <textarea rows="10" cols="50">Please enter your answer here.</textarea>
+            <h4 class="time" id="countdown">24h 0m 0s</h4>
+            <textarea rows="30" cols="75">Please enter your answer here.</textarea>
             <form method=post enctype=multipart/form-data>
               <p><input type=file name=file><input type=submit value=Submit>
             </form>
@@ -55,13 +55,12 @@
           integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
           crossorigin="anonymous"></script>
   <script>
-      // Update the count down every 1 second
+    var countDownDate = new Date().getTime() + 3600000 * 24;
+    // Update the count down every 1 second
     var x = setInterval(function() {
 
       // Get todays date and time
       var now = new Date().getTime();
-      
-      var countDownDate = now + 3600000 * 24;
 
       // Find the distance between now an the count down date
       var distance = countDownDate - now;
