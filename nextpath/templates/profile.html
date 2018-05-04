@@ -41,9 +41,11 @@
 
             <h4 class="time">Duration: {{ exp[2] }} years</h4>
             <h3 class="skillsReq">Skills </h3>
+            <h3
             {% for t in exp[4] %}
                 <span class="tag">{{ t }}</span>
- -          {% endfor %}
+            {% endfor %}
+           </h3>
         </li>
         {% endfor %}
         </ul>
