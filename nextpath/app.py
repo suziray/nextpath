@@ -176,6 +176,21 @@ def challenges():
 def challenge():
     logging.warning(session)
     if 'linkedin_token' in session:
+        
+        if request.method == 'POST':
+                if 'file' not in request.files:
+                    return redirect(request.url)
+                file = request.files['file']
+                # if user does not select file, browser also
+                # submit a empty part without filename
+                if file.filename == '':
+                    return redirect(url_for('upload_file'))
+                if file and allowed_file(file.filename):
+                    filename = secure_filename(file.filename)
+                    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                    return redirect(url_for('index'))
+            return render_template("challenge.html")
+
         me = linkedin.get('people/~')
         session['name'] = usr(dict(me.data)).fetch_first_name()
         session['proj_id'] = 3
