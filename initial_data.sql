@@ -21,8 +21,8 @@ INSERT INTO usr (id, first_name, last_name, title, company, education) VALUES (4
 -- Experience
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (1, 2, 'Product Manager', 'Verizon', '2', 'Post-merger integration with Oath', 'ui design, product management, presentation, marketing', TRUE);
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (2, 2, 'Marketing Analyst', 'Yahoo', '2', 'Online marketing for ICOs', 'blockchain, press release, brand development, pr, blogging', FALSE);
-INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (1, 1, 'Investment Manager', 'Rothschild', '2', 'LBO', 'valuation, presentation, excel, analytics', TRUE);
-INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (2, 1, 'Marketing Analyst', 'Yahoo', '2', 'Online marketing for ICOs', 'blockchain, press release, brand development, pr, blogging', FALSE);
+INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (3, 1, 'Investment Manager', 'Rothschild', '2', 'LBO', 'valuation, presentation, excel, analytics', TRUE);
+INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (4, 1, 'Marketing Analyst', 'Yahoo', '2', 'Online marketing for ICOs', 'blockchain, press release, brand development, pr, blogging', FALSE);
 
 -- Project
 INSERT INTO project (id, title, skill, description, create_time) VALUES (1,'Digit Recognition','Machine Leanring,Neural Networks','Handwritten Digit Recognition using Convolutional Neural Networks','2018-05-03 21:23:54');
@@ -36,10 +36,10 @@ INSERT INTO company (id, name, type, url, size) VALUES (2, 'Kensho Technologies'
 INSERT INTO company (id, name, type, url, size) VALUES (3, 'Google','software engineering,technology,advertisement,product management','https://www.google.com', 3);
 
 -- user project relationship 
-INSERT INTO usrprojectrel (id, urs_id, project_id, score, register_time, finish_time) VALUES (1, 4, 3, 98, '2018-02-03 10:00:54', '2018-02-04 10:00:00');
-INSERT INTO usrprojectrel (id, urs_id, project_id, score, register_time, finish_time) VALUES (2, 2, 3, 98, '2018-02-03 10:05:00', '2018-02-04 11:00:00');
-INSERT INTO usrprojectrel (id, urs_id, project_id, score, register_time, finish_time) VALUES (3, 3, 1, 95, '2018-01-01 10:00:00', '2018-01-01 14:00:00');
-INSERT INTO usrprojectrel (id, urs_id, project_id, score, register_time, finish_time) VALUES (4, 1, 1, 95, '2018-01-01 11:00:00', '2018-01-01 15:00:00');
+INSERT INTO usrprojectrel (id, usr_id, project_id, score, register_time, finish_time) VALUES (1, 4, 3, 98, '2018-02-03 10:00:54', '2018-02-04 10:00:00');
+INSERT INTO usrprojectrel (id, usr_id, project_id, score, register_time, finish_time) VALUES (2, 2, 3, 98, '2018-02-03 10:05:00', '2018-02-04 11:00:00');
+INSERT INTO usrprojectrel (id, usr_id, project_id, score, register_time, finish_time) VALUES (3, 3, 1, 95, '2018-01-01 10:00:00', '2018-01-01 14:00:00');
+INSERT INTO usrprojectrel (id, usr_id, project_id, score, register_time, finish_time) VALUES (4, 1, 1, 95, '2018-01-01 11:00:00', '2018-01-01 15:00:00');
 
 
 -- company project relationship
