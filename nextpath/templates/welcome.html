@@ -26,17 +26,17 @@
           <li><input type="button" onclick="location.href='http://ct-nextpath.herokuapp.com/profile';" value="Add Experience" /></li>
           <li><input type="button" onclick="location.href='http://ct-nextpath.herokuapp.com/logout';" value="Sign Out" /></li>
         </ul>
-      <div>
-
-
-        <div class="container">
-          <h1>At NextPath, we empower recruiters to innovatively evaluate candidates through project based recruitment, so they can hire and retain the best talent</h1>
-          <ul>
-            {% for usr in users %}
-              <li><b>{{ usr[1] }}</b></li>
-            {% endfor %}
-          </ul>
       </div>
+
+      <div class="container">
+        <h1>At NextPath, we empower recruiters to innovatively evaluate candidates through project based recruitment, so they can hire and retain the best talent</h1>
+        <ul>
+          {% for usr in users %}
+            <li><b>{{ usr[1] }}</b></li>
+          {% endfor %}
+        </ul>
+      </div>
+
     </div>
 
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"

@@ -3,15 +3,27 @@
   color: #2699fb;
 }
 
+.mainContainer {
+    max-width: 1150px;
+    margin: auto;
+}
+
 /* Sidebar */
 
 .sideNav {
-  float:left;
-
+	float:left;
+	width:25%;
 }
 
 .sideNav ul li {
   list-style-type: none;
+}
+
+.sideNav input[type="button"] {
+    background: #fff;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 /* Content */
@@ -20,6 +32,7 @@
     margin-top: 23px;
     float: left;
     margin-left: 25px;
+    width:72%;
 }
 
 /* Challenges */
