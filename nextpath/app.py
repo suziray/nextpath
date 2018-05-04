@@ -176,7 +176,7 @@ def challenges():
 def challenge():
     logging.warning(session)
     if 'linkedin_token' in session:
-        
+
         if request.method == 'POST':
                 if 'file' not in request.files:
                     return redirect(request.url)
@@ -189,7 +189,7 @@ def challenge():
                     filename = secure_filename(file.filename)
                     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                     return redirect(url_for('index'))
-            return render_template("challenge.html")
+                return render_template("challenge.html")
 
         me = linkedin.get('people/~')
         session['name'] = usr(dict(me.data)).fetch_first_name()
