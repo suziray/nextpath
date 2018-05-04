@@ -40,7 +40,6 @@ def get_usr(first_name):
 
 def match(usr_tags, chg_skills):
     chg_skills = chg_skills.split(',')
-    logging.warning(chg_skills)
     for tags in usr_tags:
         ts = tags[0].split(',')
         for t in ts:
@@ -154,7 +153,7 @@ def challenges():
             if match(usr_tags, proj[1]):
                 valid_projects.append(proj)
         logging.warning(valid_projects)
-        return render_template('profile.html', challenges=valid_projects)
+        return render_template('challenges.html', challenges=valid_projects)
     return redirect(url_for('login'))
 
 
