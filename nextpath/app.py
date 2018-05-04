@@ -65,19 +65,6 @@ def index():
         return redirect(url_for('login'))
 
 
-@app.route('/profile')
-def profile():
-    logging.warning(session)
-    if 'linkedin_token' in session:
-        me = linkedin.get('people/~')
-        session['name'] = usr(dict(me.data)).fetch_first_name()
-        cur = g.db_conn.cursor()
-        cur.execute("SELECT experience.title, experience.company, experience.duration, experience.description, experience.tags FROM experience,usr where experience.usr_id=usr.id AND usr.first_name= '" + session['name'] + "'")
-        logging.warning(session['name'])
-        return render_template('profile.html', experiences=cur.fetchall())
-    return redirect(url_for('login'))
-
-
 @app.route('/login')
 def login():
     return linkedin.authorize(callback=url_for('authorized', _external=True))
@@ -123,6 +110,18 @@ def change_linkedin_query(uri, headers, body):
     return uri, headers, body
 
 linkedin.pre_request = change_linkedin_query
+
+@app.route('/profile')
+def profile():
+    logging.warning(session)
+    if 'linkedin_token' in session:
+        me = linkedin.get('people/~')
+        session['name'] = usr(dict(me.data)).fetch_first_name()
+        cur = g.db_conn.cursor()
+        cur.execute("SELECT experience.title, experience.company, experience.duration, experience.description, experience.tags FROM experience,usr where experience.usr_id=usr.id AND usr.first_name= '" + session['name'] + "'")
+        logging.warning(cur.fetchall())
+        return render_template('profile.html', experiences=cur.fetchall())
+    return redirect(url_for('login'))
 
 
 if __name__ == '__main__':
