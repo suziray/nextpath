@@ -221,7 +221,7 @@ def mychallenges():
             if match(usr_tags, proj[1]):
                 valid_projects.append(proj)
         logging.warning(valid_projects)
-        return render_template('challenges.html', challenges=valid_projects, usr_first_name=session['name'])
+        return render_template('mychallenges.html', challenges=valid_projects, usr_first_name=session['name'])
     return redirect(url_for('login'))
 
 ####upload files######
