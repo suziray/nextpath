@@ -60,8 +60,8 @@ def index():
     logging.warning(session)
     if 'linkedin_token' in session:
         me = linkedin.get('people/~')
-        app.usr = usr(dict(me.data))
-        return get_usr(app.usr.fetch_first_name())
+        session['usr'] = usr(dict(me.data))
+        return get_usr(session['usr'].fetch_first_name())
     return redirect(url_for('login'))
 
 
@@ -87,8 +87,8 @@ def authorized():
         )
     session['linkedin_token'] = (resp['access_token'], '')
     me = linkedin.get('people/~')
-    app.usr = usr(dict(me.data))
-    return get_usr(app.usr.fetch_first_name())#jsonify(me.data)
+    session['usr'] = usr(dict(me.data))
+    return get_usr(session['usr'].fetch_first_name())#jsonify(me.data)
 
 
 @linkedin.tokengetter
