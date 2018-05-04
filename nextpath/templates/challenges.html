@@ -13,13 +13,27 @@
     <title>Nextpath</title>
   </head>
   <body>
-    <div class="container">
+    <div class="mainContainer">
+
+      <div class="sideNav">
+        <h1>Welcome, {{ usr_first_name }}</h1>
+        <ul>At Nextpath, we empower recruiters to innovatively evaluate candidates through project based recruitment, so they can hire and retain the best talent</ul>
+          <li><input type="button" onclick="location.href='http://ct-nextpath.herokuapp.com/challenges';" value="Challenges" /></li>
+          <li><input type="button" onclick="location.href='http://ct-nextpath.herokuapp.com/companies';" value="Companies" /></li>
+          <li><input type="button" onclick="location.href='http://ct-nextpath.herokuapp.com/challenges';" value="Explore" /></li>
+          <li><input type="button" onclick="location.href='http://ct-nextpath.herokuapp.com/mychallenges';" value="Accepted Challanges" /></li>
+          <li><input type="button" onclick="location.href='http://ct-nextpath.herokuapp.com/profile';" value="Add Experience" /></li>
+          <li><input type="button" onclick="location.href='http://ct-nextpath.herokuapp.com/logout';" value="Sign Out" /></li>
+        <div>
+
+
+        <div class="container">
       <div>
         <h1>Challenges</h1>
         <ul>
           {% for chg in challenges %}
             <li>title{{ chg[0] }} - <b>skills required{{ chg[1] }}</b> - <b>description{{ chg[2] }}</b> - <b>start_time{{ chg[3] }}</b> - <b>expire_time{{ chg[4] }}</b></li>
-            <img border="0" alt="logo" src={{ chg[5] }} width="50" height="50">
+            <img border="0" alt="logo" src={{ chg[5] }} />
           {% endfor %}
         </ul>
       </div>
