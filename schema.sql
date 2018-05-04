@@ -50,5 +50,6 @@ create table companyprojectrel (
   project_id integer REFERENCES project (id),
   list_time timestamp not null,
   start_time timestamp not null,
-  expire_time timestamp not null
+  expire_time timestamp not null,
+  time_limit integer
 );
