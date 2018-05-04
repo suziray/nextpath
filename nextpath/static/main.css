@@ -234,17 +234,15 @@ span.tag {
     border-radius: 0px;
     float: none;
     display: inline-block;
-    width: 171px;
-    text-align: left;
-    padding: 6px 10px 4px 26px;
+    width: 100%;
+    text-align: center;
+    padding: 4px 0;
     font-size: 10px;
     position: absolute;
     top: 0px;
     margin-top: 0px;
     left: 0;
-    border-radius: 0 0px 9px 0px !important;
 }
-
 
 .challenges.profile li {
     list-style-type: none !important;
@@ -260,7 +258,11 @@ span.tag {
   height: 50px;
   text-align: center;
   line-height: 1.2;
-  color: #38b96a;
+  color: #38b96a !important;
   font-weight: 700;
   font-size: 11px;
+}
+
+.submitted {
+  color:#38b96a !important;
 }
