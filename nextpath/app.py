@@ -79,7 +79,7 @@ def profile():
 
 @app.route('/login')
 def login():
-    return linkedin.authorize(callback=url_for('authorized', _external=True))
+    return linkedin.authorize(callback=url_for('', _external=False))
 
 
 @app.route('/logout')
@@ -87,7 +87,7 @@ def logout():
     session.pop('linkedin_token', None)
     session.clear()
     logging.warning(session)
-    return url_for('index')
+    return url_for('login')
 
 
 @app.route('/login/authorized')
