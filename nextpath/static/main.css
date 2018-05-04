@@ -144,3 +144,56 @@ h3.welcome {
     border-bottom: 1px solid #ccc;
     padding-bottom: 9px;
 }
+
+
+#countdown {
+    color: #e6c127;
+    font-weight: 700;
+    font-size: 11px;
+    width: auto;
+    float: left;
+    padding: 7px 23px;
+    font-family: roboto;
+    background: #fff9dfcc;
+}
+
+.challengeBox {
+    width: 99%;
+    border:none !important;
+    background: #f5f5f5;
+    box-shadow: 0px 0px 5px #ccc;
+    padding: 17px;
+    color: #000;
+    font-family: roboto;
+    border-top: 7px solid #777;
+  }
+
+input[type="submit"] {
+      background: #3b9e70;
+      color: #fff;
+      font-family: roboto;
+      border: none;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 0.25px;
+      padding: 10px 20px;
+      border-radius: 2px;
+      float: left;
+}
+
+input[type="file"] {
+    display: block;
+    background: #f3f3f3 !important;
+    color: #ccc !important;
+    font-family: roboto;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.25px;
+    padding: 9px 20px;
+    border-radius: 0px;
+    float: left;
+    margin-right: 18px;
+}
