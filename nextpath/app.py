@@ -9,7 +9,7 @@ import json
 
 from werkzeug.utils import secure_filename
  
-UPLOAD_FOLDER = 'assets'
+UPLOAD_FOLDER = 'static'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 
