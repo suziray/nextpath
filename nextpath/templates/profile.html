@@ -38,11 +38,12 @@
             <h2 class="title">{{ exp[0] }}</h2>
             <h2 class="title">{{ exp[1] }}</h2>
             <p class="shortDesc">{{ exp[3] }}</p>
-
             <h4 class="time">Duration: {{ exp[2] }} years</h4>
+            <h5>
             {% for t in exp[4] %}
                 <span class="tag">{{ t }}</span>
             {% endfor %}
+            </h5>
         </li>
         {% endfor %}
         </ul>
