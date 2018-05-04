@@ -60,7 +60,7 @@ def index():
     logging.warning(session)
     if 'linkedin_token' in session:
         me = linkedin.get('people/~')
-        session['usr'] = json.dumps(usr(dict(me.data)))
+        session['usr'] = json.dumps(usr(dict(me.data)).__dict__)
         return get_usr(json.loads(session['usr']).fetch_first_name())
     return redirect(url_for('login'))
 
@@ -87,7 +87,7 @@ def authorized():
         )
     session['linkedin_token'] = (resp['access_token'], '')
     me = linkedin.get('people/~')
-    session['usr'] = json.dumps(usr(dict(me.data)))
+    session['usr'] = json.dumps(usr(dict(me.data)).__dict__)
     return get_usr(json.loads(session['usr']).fetch_first_name())#jsonify(me.data)
 
 
