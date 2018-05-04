@@ -1,6 +1,7 @@
 * {
   font-family: 'Roboto Slab', serif;
   color: #2699fb;
+  font-weight:300;
 }
 
 body {
@@ -51,15 +52,16 @@ body {
 /* Content */
 .container {
     box-shadow: 0px 0px 126px -22px #d9edff;
-    border: 0px solid #a9d8ff;
+    border: none !important;
+    border-top: 1px solid !important;
     margin-top: 23px;
     float: left;
     margin-left: 25px;
     padding: 30px 70px 11px 43px;
     background: #ffffff;
-    border-top: 1px solid;
     width:72%;
     min-height:90vh;
+
 }
 
 /* Challenges */
@@ -94,7 +96,7 @@ h2.hello {
     line-height: 1.25;
 }
 
-h3.skillReq {
+h3.skillsReq {
     font-size: 11px;
     font-weight: 700;
     background: #f7c533;
@@ -132,5 +134,14 @@ h4.time {
 }
 
 h4.time.end {
-	background: background;
+	background: #ff4c4c;
+}
+
+h3.welcome {
+    font-size: 21px;
+    font-weight: 200;
+    color: #6f6f6f;
+    margin: 0 0 18px 5px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 9px;
 }
