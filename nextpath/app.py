@@ -185,7 +185,7 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('login'))
-    return render_template("upload.html",file_name = filename)
+    return render_template("upload.html")
 
 if __name__ == '__main__':
     app.run()
