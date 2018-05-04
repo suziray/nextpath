@@ -179,7 +179,7 @@ def challenge():
 
         if request.method == 'POST':
                 if 'file' not in request.files:
-                    return redirect(request.url)
+                    return render_template("index.html")
                 file = request.files['file']
                 # if user does not select file, browser also
                 # submit a empty part without filename
