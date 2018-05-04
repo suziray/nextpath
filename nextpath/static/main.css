@@ -167,7 +167,7 @@ h3.welcome {
     padding: 17px;
     color: #000;
     font-family: roboto;
-    border-top: 7px solid #777;
+    border-top: 7px solid #777 !important;
   }
 
 input[type="submit"] {
