@@ -15,10 +15,13 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 toolbar = DebugToolbarExtension(app)
 oauth = OAuth(app)
 
+
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static/uploads')
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 class usr:
     def __init__(self,usr_dict):
