@@ -35,12 +35,12 @@
         {% for chg in challenges %}
           <li>
             <img border="0" alt="logo" src='{{ chg[5] }}' />
-            <h2 class="title">{{ chg[0] }}</h2></br>
-            <h3 class="skillsReq">Skills Required:</h3><br/>
-            {{ chg[1] }}
+            <h2 class="title">{{ chg[0] }}</h2>
             <p class="shortDesc">{{ chg[2] }}</p>
-            <h4 class="time">Starts:</h4> {{ chg[3] }}
-            <h4 class="time">Ends: {{ chg[4] }}
+            <h3 class="skillsReq">Skills Required:</h3>
+            {{ chg[1] }}
+            <h4 class="time">Starts: {{ chg[3] }}</h4>
+            <h4 class="time">Ends: {{ chg[4] }}</h4>
           </li>
         {% endfor %}
         </ul>
