@@ -172,7 +172,7 @@ def challenges():
         return render_template('challenges.html', challenges=valid_projects, usr_first_name=session['name'])
     return redirect(url_for('login'))
 
-@app.route('/challenge')
+@app.route('/challenge', methods=['GET', 'POST'])
 def challenge():
     logging.warning(session)
     if 'linkedin_token' in session:
