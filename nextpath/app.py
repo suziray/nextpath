@@ -218,7 +218,7 @@ def challenge():
 
         me = linkedin.get('people/~')
         session['name'] = usr(dict(me.data)).fetch_first_name()
-        session['proj_id'] = 3
+        session['proj_id'] = 7
         cur = g.db_conn.cursor()
         sql = "SELECT project.title, project.skill, project.description, companyprojectrel.start_time, companyprojectrel.expire_time, company.url, companyprojectrel.time_limit FROM project,companyprojectrel,company where project.id=companyprojectrel.project_id AND companyprojectrel.company_id=company.id AND project.id='" + str(session['proj_id']) + "'"
         cur.execute(sql)
