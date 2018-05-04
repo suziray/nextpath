@@ -4,6 +4,10 @@
   font-weight:300;
 }
 
+li {
+  list-style-type: none !important;
+}
+
 body {
 	background-color: #f7fafd;
 }
