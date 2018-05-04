@@ -184,7 +184,7 @@ def challenge():
                 # if user does not select file, browser also
                 # submit a empty part without filename
                 if file.filename == '':
-                    return redirect(url_for('upload_file'))
+                    return render_template("index.html")
                 if file and allowed_file(file.filename):
                     filename = secure_filename(file.filename)
                     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
