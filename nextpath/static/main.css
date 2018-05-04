@@ -199,3 +199,22 @@ input[type="file"] {
     float: left;
     margin-right: 18px;
 }
+
+ul.challenges.profile .title {
+    font-weight: 600 !important;
+    line-height: 2px;
+    font-family: roboto;
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+span.tag {
+    background: #a2a2a2;
+    color: #ffffff;
+    font-family: roboto;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    padding: 2px 10px 2px;
+    border-radius: 27px;
+}
