@@ -119,9 +119,7 @@ def profile():
         session['name'] = usr(dict(me.data)).fetch_first_name()
         cur = g.db_conn.cursor()
         prf_sql = "SELECT experience.title, experience.company, experience.duration, experience.description, experience.tags FROM experience,usr where experience.usr_id=usr.id AND usr.first_name= '" + session['name'] + "'"
-        logging.warning(prf_sql)
         cur.execute(prf_sql)
-        logging.warning(cur.fetchall())
         return render_template('profile.html', experiences=cur.fetchall())
     return redirect(url_for('login'))
 
