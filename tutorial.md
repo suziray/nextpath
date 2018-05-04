@@ -14,24 +14,24 @@ _(Assuming you've already created an account with Heroku)_
 
 ##### 1. Clone the repo
 ```bash
-$ git clone https://github.com/rmotr-curriculum/flask-heroku-example.git && cd flask-heroku-example
-$ git clone https://github.com/suziray/nextpath.git && cd nextpath
+git clone https://github.com/rmotr-curriculum/flask-heroku-example.git && cd flask-heroku-example
+git clone https://github.com/suziray/nextpath.git && cd nextpath
 ```
 
 ##### 2. Login to Heroku
 ```bash
-$ heroku login
+heroku login
 ```
 
 ##### 3. Create your Heroku apps
 ```bash
-$ heroku create ct-nextpath
+heroku create ct-nextpath
 ```
 
 ##### 4. Set the Python Path
 ```bash
-$ heroku config:set PYTHONPATH=flask_heroku_example
-$ heroku config:set PYTHONPATH=nextpath
+heroku config:set PYTHONPATH=flask_heroku_example
+heroku config:set PYTHONPATH=nextpath
 ```
 
 ##### 5. Add Postgres Add-on to your Heroku app
@@ -39,28 +39,35 @@ $ heroku config:set PYTHONPATH=nextpath
 
 ##### 6. Initialize the Database
 ```bash
-$ # Create the initial schema
-$ heroku pg:psql < schema.sql
-$ # Load some initial testing data
-$ heroku pg:psql < initial_data.sql
-$ # Clear database
-$ heroku pg:reset DATABASE
+# Clear database
+heroku pg:reset DATABASE --confirm ct-nextpath
+# Create the initial schema
+heroku pg:psql < schema.sql
+# Load some initial testing data
+heroku pg:psql < initial_data.sql
 ```
 
 ##### 7. Deploy & Profit
 ```bash
-$ git push heroku master
+git add .
+git commit -m "some comment"
+git push
+git push heroku master
 ```
 
 ## Running the app locally
 _(You need to have installed Postgres locally to run the app. For a simpler sqlite alternative, please check the aforementioned tutorial)_
 
 ```bash
+# Install virtualenv
+pip install virtualenv
+# Create virtualenv
+virtualenv nextp
 # Activate the virtualenv
-$ source nextp/bin/activate
+source nextp/bin/activate
 # Install dependencies
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 # Run the app
-$ python nextpath/main.py
+python nextpath/main.py
 # Now point your browser to localhost:5000
 ```
