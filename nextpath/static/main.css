@@ -49,32 +49,15 @@ body {
 
 
 /* Content */
-/*.container {
-    border: 3px solid #2699fb;
-    margin-top: 23px;
-    float: left;
-    margin-left: 25px;
-    width:72%;
-}*/
-
-/*.container {
-    box-shadow: 0px 0px 50px #e8e8e8;
-    border: 0px solid #2699fb;
-    margin-top: 23px;
-    float: left;
-    margin-left: 25px;
-    padding: 5px 70px 11px 43px;
-}*/
-
 .container {
     box-shadow: 0px 0px 126px -22px #d9edff;
-    border: 0px solid #2699fb;
+    border: 0px solid #a9d8ff;
     margin-top: 23px;
     float: left;
     margin-left: 25px;
-    padding: 5px 70px 11px 43px;
-    border-top:1px solid;
-
+    padding: 30px 70px 11px 43px;
+    background: #ffffff;
+    border-top: 1px solid;
 }
 
 /* Challenges */
