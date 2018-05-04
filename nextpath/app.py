@@ -9,7 +9,6 @@ import json
 
 from werkzeug.utils import secure_filename
  
-UPLOAD_FOLDER = '/static'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 
@@ -20,7 +19,7 @@ oauth = OAuth(app)
 
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static/uploads')
+UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 class usr:
@@ -187,7 +186,6 @@ def upload_file():
         # if user does not select file, browser also
         # submit a empty part without filename
         if file.filename == '':
-            flash('No selected file')
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
