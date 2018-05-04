@@ -25,12 +25,10 @@
         <h1>Challenges</h1>
         <ul class="challenges">
         {% for chg in challenges %}
-          <li onclick="window.location.href='http://ct-nextpath.herokuapp.com/mychallenges'">
             <img border="0" alt="logo" src='{{ chg[5] }}' />
             <h2 class="title">{{ chg[0] }}</h2>
             <p class="shortDesc">{{ chg[2] }}</p>
-            <h3 class="skillsReq">Participatns: 28</h3>
-          </li>
+            <h3 class="skillsReq">Participatns: 100</h3>
         {% endfor %}
         </ul>
       </div>
