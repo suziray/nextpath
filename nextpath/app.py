@@ -270,11 +270,14 @@ def upload_file():
 def dashboard():
     company_id = request.args.get('id')
     cur = g.db_conn.cursor()
+    sql = "SELECT company.name FROM company where company.id= '" + company_id +"'"
+    cur.execute(sql)
+    name = cur.fetchall()
+    cur = g.db_conn.cursor()
     sql = "SELECT project.title, project.skill, project.description, companyprojectrel.start_time, companyprojectrel.expire_time, company.url, companyprojectrel.time_limit FROM project,companyprojectrel,company where project.id=companyprojectrel.project_id AND companyprojectrel.company_id= '" + company_id +"'"
     cur.execute(sql)
     projects = cur.fetchall()
-    return render_template('dashboard.html', challenges=projects, usr_first_name=session['name'])
-    return redirect(url_for('login'))
+    return render_template('dashboard.html', challenges=projects, company_name=name)
 
 
 
