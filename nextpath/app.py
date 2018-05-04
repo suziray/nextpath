@@ -273,7 +273,7 @@ def dashboard():
     sql = "SELECT company.name FROM company where company.id= '" + company_id +"'"
     cur.execute(sql)
     name = cur.fetchall()
-    sql = "SELECT project.title, project.skill, project.description, companyprojectrel.start_time, companyprojectrel.expire_time, company.url, companyprojectrel.time_limit FROM project,companyprojectrel,company where project.id=companyprojectrel.project_id AND companyprojectrel.company_id = "  + company_id 
+    sql = "SELECT project.title, project.skill, project.description, companyprojectrel.start_time, companyprojectrel.expire_time, company.url, companyprojectrel.time_limit FROM project,companyprojectrel,company where project.id=companyprojectrel.project_id AND companyprojectrel.company_id = '" + company_id +"'"
     cur.execute(sql)
     projects = cur.fetchall()
     return render_template('dashboard.html', challenges=projects, company_name=name[0][0])
