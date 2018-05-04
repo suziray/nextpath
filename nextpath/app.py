@@ -172,6 +172,20 @@ def challenges():
         return render_template('challenges.html', challenges=valid_projects, usr_first_name=session['name'])
     return redirect(url_for('login'))
 
+@app.route('/challenge')
+def challenge():
+    logging.warning(session)
+    if 'linkedin_token' in session:
+        me = linkedin.get('people/~')
+        session['name'] = usr(dict(me.data)).fetch_first_name()
+        session['proj_id'] = 1
+        cur = g.db_conn.cursor()
+        sql = "SELECT project.title, project.skill, project.description, companyprojectrel.start_time, companyprojectrel.expire_time, company.url FROM project,companyprojectrel,company where project.id=companyprojectrel.project_id AND companyprojectrel.company_id=company.id AND project.id='" + session['proj_id'] + "'"
+        cur.execute(sql)
+        projects = cur.fetchall()
+        return render_template('challenge.html', challenge=projects[0], usr_first_name=session['name'])
+    return redirect(url_for('login'))
+
 
 ####upload files######
 def allowed_file(filename):
