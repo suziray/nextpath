@@ -137,7 +137,11 @@ def profile():
         cur = g.db_conn.cursor()
         prf_sql = "SELECT experience.title, experience.company, experience.duration, experience.description, experience.tags FROM experience,usr WHERE experience.usr_id=usr.id AND usr.first_name= '" + session['name'] + "'"
         cur.execute(prf_sql)
-        return render_template('profile.html', experiences=cur.fetchall())
+        experiences=cur.fetchall()
+        tags = []
+        for i in range(len(experiences)):
+            experiences[i][4] = experiences[i][4].split(',')
+        return render_template('profile.html', experiences=experiences)
     return redirect(url_for('login'))
 
 
@@ -183,8 +187,7 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            basedir = os.path.abspath(os.path.dirname(__file__))
-            file.save(os.path.join(basedir, app.config['UPLOAD_FOLDER'], filename))
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('login'))
     return render_template("upload.html")
 
