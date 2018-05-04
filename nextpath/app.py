@@ -238,16 +238,8 @@ def mychallenges():
         sql = "SELECT project.title, project.skill, project.description, companyprojectrel.start_time, companyprojectrel.expire_time, company.url, companyprojectrel.time_limit FROM project,companyprojectrel,company,usrprojectrel,usr where project.id=companyprojectrel.project_id AND companyprojectrel.company_id=company.id and usrprojectrel.usr_id =usr.id and usrprojectrel.project_id=project.id AND companyprojectrel.company_id=company.id AND usr.first_name='" + str(session['name']) + "'"
         cur.execute(sql)
         projects = cur.fetchall()
-
-        sql = "SELECT experience.tags FROM experience,usr WHERE experience.usr_id=usr.id AND usr.first_name= '" + session['name'] + "'"
-        cur.execute(sql)
-        usr_tags = cur.fetchall()
-        valid_projects = []
-        for proj in projects:
-            if match(usr_tags, proj[1]):
-                valid_projects.append(proj)
-        logging.warning(valid_projects)
-        return render_template('mychallenges.html', challenges=valid_projects, usr_first_name=session['name'])
+        logging.warning(projects)
+        return render_template('mychallenges.html', challenges=projects, usr_first_name=session['name'])
     return redirect(url_for('login'))
 
 ####upload files######
