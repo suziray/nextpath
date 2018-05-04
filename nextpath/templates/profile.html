@@ -29,19 +29,21 @@
         </ul>
       </div>
 
-      <div class="container">
-          <h1>Experiences</h1>
-          <ul>
-            {% for exp in experiences %}
-              <li>title{{ exp[0] }} - <b>company{{ exp[1] }}</b> - <b>duration{{ exp[2] }}</b> - <b>description{{ exp[3] }}</b>
-              <div class="tags">
-              {% for t in exp[4] %}
-                <span class="tag">{{ t }}</span>
-              {% endfor %}
-              </div>
-              </li>
-            {% endfor %}
-          </ul>
+       <div class="container">
+        <h1>Experiences</h1>
+        <ul class="challenges">
+        {%for exp in experiences  %}
+          <li>
+
+            <h2 class="title">{{ exp[0] }}</h2>
+            <h2 class="title">{{ exp[1] }}</h2>
+            <p class="shortDesc">{{ exp[3] }}</p>
+            <h3 class="skillsReq">Skills </h3>
+            {{ exp[4] }}
+            <h4 class="time">Duration: {{ exp[2] }}</h4>
+          </li>
+        {% endfor %}
+        </ul>
       </div>
 
     </div>
