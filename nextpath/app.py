@@ -140,11 +140,14 @@ def profile():
         prf_sql = "SELECT experience.title, experience.company, experience.duration, experience.description, experience.tags FROM experience,usr WHERE experience.usr_id=usr.id AND usr.first_name= '" + session['name'] + "'"
         cur.execute(prf_sql)
         experiences=cur.fetchall()
-        tags = []
+        exps = []
         for i in range(len(experiences)):
-            logging.warning(experiences[i][4].split(','))
-            experiences[i][4] = experiences[i][4].split(',')
-        return render_template('profile.html', experiences=experiences)
+            temp = []
+            for j in range(4):
+                temp.append(experiences[i][j])
+            temp.append(experiences[i][4].split(','))
+            exps.append(temp)
+        return render_template('profile.html', experiences=exps)
     return redirect(url_for('login'))
 
 
