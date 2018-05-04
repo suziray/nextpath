@@ -44,7 +44,7 @@ heroku pg:reset DATABASE --app ct-nextpath --confirm ct-nextpath
 # Create the initial schema
 heroku pg:psql < schema.sql --app ct-nextpath
 # Load some initial testing data
-heroku pg:psql < initial_data.sql --app ct-nextpath 
+heroku pg:psql < initial_data.sql --app ct-nextpath
 ```
 
 ##### 7. Deploy & Profit

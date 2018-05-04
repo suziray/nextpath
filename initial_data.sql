@@ -28,11 +28,13 @@ INSERT INTO project (id, title, skill, description, create_time) VALUES (3,'Goog
 INSERT INTO project (id, title, skill, description, create_time) VALUES (4,'Google Brain Bussiness Challenge','Product Management,Software Development,Deep Learning,Machine Learning','Develop an innovative plan to apply google brain technogloy to solve business problems','2018-02-02 10:23:54');
 INSERT INTO project (id, title, skill, description, create_time) VALUES (5,'Google Venture Case Competition','Product Management,Business Strategy,Valuation,Technology,Software Engineering','Google VC competition asks you to complete an investor pitch for a potential target startup company','2018-04-02 11:00:00');
 INSERT INTO project (id, title, skill, description, create_time) VALUES (6,'The Next Gen Payment System','Fintech,Software Engineering,Blockchain,Payment,Machine Learning,Big Data','Deliver technical proposal for blockchain-powered transaction system to revoluationize the bank to bank payment system ','2018-06-01 9:00:00');
+INSERT INTO project (id, title, skill, description, create_time) VALUES (7,'Product Improvements to Increase 7-Day Retention','Fintech,Software Engineering,Blockchain,Payment,Machine Learning,Big Data','Select any Evernote product on any platform, but be specific. Write 1 paragraph describing a change you wouldd make to the product that would increase the first-week retention. Then write a brief outline of the process you would go through from initial idea to release describing how you will implement this change. Please complete in any form preferred and submit in the link below','2018-06-01 9:00:00');
 
 -- Company
 INSERT INTO company (id, name, type, url, size) VALUES (1, 'JP Morgan','Investment Banking,Finance','https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/J_P_Morgan_Logo_2008_1.svg/2000px-J_P_Morgan_Logo_2008_1.svg.png', 3);
 INSERT INTO company (id, name, type, url, size) VALUES (2, 'Kensho Technologies','Data Analytics,Big Data,Artificial Intelligence,Machine Learning','https://www.iqt.org/wp-content/uploads/2016/10/Kensho-logo-for-web.png', 1);
 INSERT INTO company (id, name, type, url, size) VALUES (3, 'Google','Software Engineering,Technology,Advertisement,Product Management','https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png', 3);
+INSERT INTO company (id, name, type, url, size) VALUES (4, 'Evernote','Software Engineering,Technology,Advertisement,Product Management','https://www.raccoon.ag/wp-content/uploads/2017/04/Evernote_logo.png', 3);
 
 -- user project relationship 
 INSERT INTO usrprojectrel (id, usr_id, project_id, score, register_time, finish_time) VALUES (1, 4, 3, 98, '2018-05-03 10:00:54', '2018-05-04 10:00:00');
@@ -47,6 +49,7 @@ INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time
 INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time, time_limit) VALUES (4,3,4, '2018-01-01 07:00:00','2018-01-01 9:00:00', '2018-12-05 12:00:00',5);
 INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time, time_limit) VALUES (5,3,5, '2018-01-01 07:00:00','2018-01-01 9:00:00', '2018-12-05 12:00:00',2);
 INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time, time_limit) VALUES (6,1,6, '2018-06-01 07:00:00','2018-06-01 9:30:00', '2018-12-05 12:00:00',1);
+INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time, time_limit) VALUES (7,4,7, '2018-06-01 07:00:00','2018-06-01 9:30:00', '2018-12-05 12:00:00',1);
 
 
 
