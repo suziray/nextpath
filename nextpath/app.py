@@ -33,7 +33,7 @@ def before_request():
 #@app.route('/usr')
 def get_usr(first_name):
     cur = g.db_conn.cursor()
-    cur.execute("SELECT * FROM usr where first_name ==" + first_name)
+    cur.execute("SELECT * FROM usr where first_name == " + first_name)
     return render_template('index.html', users=cur.fetchall())
 
 oauth = OAuth(app)
