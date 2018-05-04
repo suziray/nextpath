@@ -3,6 +3,7 @@ INSERT INTO usr (id, first_name, last_name, title, company, education) VALUES (1
 INSERT INTO usr (id, first_name, last_name, title, company, education) VALUES (2, 'Alex', 'Johnson-Leung', 'Product Manager', 'Verizon', 'New York University');
 INSERT INTO usr (id, first_name, last_name, title, company, education) VALUES (3, 'Charles', 'Deng', 'Data Scientist', 'Two Sigma', 'Cornell University');
 INSERT INTO usr (id, first_name, last_name, title, company, education) VALUES (4, 'Jonathan', 'Kroll', 'Partner', 'Founders Fund', 'UCSB');
+INSERT INTO usr (id, first_name, last_name, title, company, education) VALUES (5, 'Khoa', 'Ma', 'Director', 'Cornell Tech', 'University of San Francisco');
 
 -- Experience
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (1, 2, 'Product Manager', 'Verizon', '2', 'Post-merger integration with Oath', 'UI Design,Product Management,Presentation,Marketing', TRUE);
@@ -16,6 +17,9 @@ INSERT INTO experience (id, usr_id, title, company, duration, description, tags,
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (9, 4, 'Partner', 'Founders Fund', '2', 'Investment in Facebook', 'Valuation,Presentation,Finance', TRUE);
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (10, 4, 'Marketing Analyst', 'Yahoo', '2', 'Online marketing for ICOs', 'Blockchain,Press Release,Brand Development,PR,Blogging', FALSE);
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (11, 4, 'Software Engineer', 'Apple', '1', 'Software engineering of Apple Watch', 'Software Development,Data,Product Design', FALSE);
+INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (12, 5, 'Director', 'Cornell Tech', '1', 'Startup Studio leader', 'Management,Product Design,Marketing,Validation', TRUE);
+INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (13, 5, 'Marketing Analyst', 'Yahoo', '2', 'Online marketing for ICOs', 'Blockchain,Press Release,Brand Development,PR,Blogging', FALSE);
+INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (14, 5, 'Software Engineer', 'Apple', '1', 'Software engineering of Apple Watch', 'Software Development,Data,Product Design', FALSE);
 
 -- Project
 INSERT INTO project (id, title, skill, description, create_time) VALUES (1,'Digit Recognition','Machine Learning,Neural Networks','Handwritten Digit Recognition using Convolutional Neural Networks','2018-05-03 21:23:54');
