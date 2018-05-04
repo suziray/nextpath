@@ -58,7 +58,9 @@ body {
     padding: 30px 70px 11px 43px;
     background: #ffffff;
     border-top: 1px solid;
-    width:73%;
+    width:72%;
+    min-height:90vh;
+
 }
 
 /* Challenges */
@@ -83,6 +85,14 @@ h2.title {
     font-size: 17px;
     color: #000;
     font-weight: 300;
+}
+
+h2.hello {
+	h2 {
+    font-weight: 200;
+    color: #565656;
+    font-size: 25px;
+    line-height: 1.25;
 }
 
 h3.skillReq {
