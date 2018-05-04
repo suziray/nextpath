@@ -279,6 +279,10 @@ def dashboard():
     return render_template('dashboard.html', challenges=projects, company_name=name[0][0])
 
 
+@app.route('/createchallenge')
+def create_challenge():
+    return render_template('createchallenge.html')
+
 
 if __name__ == '__main__':
     app.run()
