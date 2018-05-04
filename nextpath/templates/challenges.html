@@ -39,8 +39,8 @@
             <h2 class="title">{{ chg[0] }}</h2>
             <p class="shortDesc">{{ chg[2] }}</p>
             <h3 class="skillsReq">Time limit: {{ chg[6] }} hours</h3>
-            <h4 class="time">Released on: {{ str(chg[3].date()) }}</h4>
-            <h4 class="time">Ends: {{ str(chg[4].date()) }}</h4>
+            <h4 class="time">Released on: {{ chg[3].date() }}</h4>
+            <h4 class="time">Ends: {{ chg[4].date() }}</h4>
           </li>
         {% endfor %}
         </ul>
