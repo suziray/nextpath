@@ -183,7 +183,8 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            basedir = os.path.abspath(os.path.dirname(__file__))
+            file.save(os.path.join(basedir, app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('login'))
     return render_template("upload.html")
 
