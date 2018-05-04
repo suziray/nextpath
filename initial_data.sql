@@ -24,6 +24,12 @@ INSERT INTO experience (id, usr_id, title, company, duration, description, tags,
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (3, 1, 'Investment Manager', 'Rothschild', '2', 'LBO', 'Valuation,Presentation,Excel,Finance', TRUE);
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (4, 1, 'Marketing Analyst', 'Yahoo', '2', 'Online marketing for ICOs', 'Blockchain,Press Release,Brand Development,Pr,Blogging', FALSE);
 INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (5, 1, 'Software Engineer', 'Apple', '1', 'Software engineering of Apple Watch', 'Software Development,Data,Product Design', FALSE);
+INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (6, 3, 'Data Scientist', 'Two Sigma', '2', 'Macro data analytics', 'Valuation,Presentation,R,Finance', TRUE);
+INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (7, 3, 'Marketing Analyst', 'Yahoo', '2', 'Online marketing for ICOs', 'Blockchain,Press Release,Brand Development,Pr,Blogging', FALSE);
+INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (8, 3, 'Software Engineer', 'Apple', '1', 'Software engineering of Apple Watch', 'Software Development,Data,Product Design', FALSE);
+INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (9, 4, 'Partner', 'Founders Fund', '2', 'Investment in Facebook', 'Valuation,Presentation,Finance', TRUE);
+INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (10, 4, 'Marketing Analyst', 'Yahoo', '2', 'Online marketing for ICOs', 'Blockchain,Press Release,Brand Development,Pr,Blogging', FALSE);
+INSERT INTO experience (id, usr_id, title, company, duration, description, tags, curr) VALUES (11, 4, 'Software Engineer', 'Apple', '1', 'Software engineering of Apple Watch', 'Software Development,Data,Product Design', FALSE);
 
 -- Project
 INSERT INTO project (id, title, skill, description, create_time) VALUES (1,'Digit Recognition','Machine Learning,Neural Networks','Handwritten Digit Recognition using Convolutional Neural Networks','2018-05-03 21:23:54');

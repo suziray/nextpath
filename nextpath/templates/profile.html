@@ -17,7 +17,7 @@
         <h1>Experiences</h1>
         <ul>
           {% for exp in experiences %}
-            <li>{{ exp[0] }} - <b>{{ exp[1] }}</b> - <b>{{ exp[2] }}</b> - <b>{{ exp[3] }}</b> - <b>{{ exp[4] }}</b></li>
+            <li>title{{ exp[0] }} - <b>company{{ exp[1] }}</b> - <b>duration{{ exp[2] }}</b> - <b>description{{ exp[3] }}</b> - <b>tags{{ exp[4] }}</b></li>
           {% endfor %}
         </ul>
       </div>
