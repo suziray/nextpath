@@ -136,7 +136,7 @@ def profile():
 
 
 @app.route('/challenges')
-def profile():
+def challenges():
     logging.warning(session)
     if 'linkedin_token' in session:
         me = linkedin.get('people/~')
