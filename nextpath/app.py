@@ -147,7 +147,7 @@ def profile():
                 temp.append(experiences[i][j])
             temp.append(experiences[i][4].split(','))
             exps.append(temp)
-        return render_template('profile.html', experiences=exps)
+        return render_template('profile.html', experiences=exps, usr_first_name=session['name'])
     return redirect(url_for('login'))
 
 
@@ -169,7 +169,7 @@ def challenges():
             if match(usr_tags, proj[1]):
                 valid_projects.append(proj)
         logging.warning(valid_projects)
-        return render_template('challenges.html', challenges=valid_projects)
+        return render_template('challenges.html', challenges=valid_projects, usr_first_name=session['name'])
     return redirect(url_for('login'))
 
 
