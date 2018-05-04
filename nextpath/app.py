@@ -79,7 +79,7 @@ def profile():
 
 @app.route('/login')
 def login():
-    return linkedin.authorize(callback=url_for('', _external=False))
+    return linkedin.authorize(callback=url_for('authorized', _external=True))
 
 
 @app.route('/logout')
@@ -102,7 +102,7 @@ def authorized():
     me = linkedin.get('people/~')
     session['name'] = usr(dict(me.data)).fetch_first_name()
     logging.warning(session['name'])
-    return get_usr(session['name'])
+    return render_template('index.html', usr_first_name=session['name'])
 
 
 @linkedin.tokengetter
