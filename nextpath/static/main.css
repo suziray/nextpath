@@ -99,13 +99,14 @@ h3.skillsReq {
     font-size: 11px;
     font-weight: 700;
     background: #f7c533;
-    width: 111px;
+    width: auto;
     padding: 4px 5px 3px;
     text-align: center;
     color: #ffffff;
     font-family: roboto;
     text-transform: uppercase;
     letter-spacing: 0.25px;
+    float:left;
 
 }
 
@@ -130,6 +131,7 @@ h4.time {
     float: left;
     width: auto;
     clear: left;
+    margin-bottom:0;
 }
 
 h4.time.end {
