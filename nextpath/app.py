@@ -142,7 +142,8 @@ def profile():
         experiences=cur.fetchall()
         tags = []
         for i in range(len(experiences)):
-            experiences[i][4] = experiences[i][4][0].split(',')
+            logging.warning(experiences[i][4])
+            experiences[i][4] = experiences[i][4].split(',')
         return render_template('profile.html', experiences=experiences)
     return redirect(url_for('login'))
 
