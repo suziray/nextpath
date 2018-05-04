@@ -5,12 +5,21 @@ from flask_oauthlib.client import OAuth
 
 from flask_debugtoolbar import DebugToolbarExtension
 import logging
+import json
 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
 toolbar = DebugToolbarExtension(app)
 
+
+class usr:
+    def __init__(self,usr_dict):
+        self.firstName = usr_dict['firstName']
+        self.lastName = usr_dict['lastName']
+
+    def fetch_first_name(self):
+        return self.firstName
 
 def connect_db():
     return psycopg2.connect(os.environ.get('DATABASE_URL'))
@@ -21,10 +30,10 @@ def before_request():
     g.db_conn = connect_db()
 
 
-@app.route('/usr')
-def get_usr():
+#@app.route('/usr')
+def get_usr(first_name):
     cur = g.db_conn.cursor()
-    cur.execute("SELECT * FROM usr;")
+    cur.execute("SELECT * FROM usr where first_name ==" + first_name)
     return render_template('index.html', users=cur.fetchall())
 
 oauth = OAuth(app)
@@ -51,7 +60,8 @@ def index():
     logging.warning(session)
     if 'linkedin_token' in session:
         me = linkedin.get('people/~')
-        return jsonify(me.data)
+        app.usr = usr(dict(me.data))
+        return get_usr(app.usr.fetch_first_name())
     return redirect(url_for('login'))
 
 
@@ -77,7 +87,8 @@ def authorized():
         )
     session['linkedin_token'] = (resp['access_token'], '')
     me = linkedin.get('people/~')
-    return jsonify(me.data)
+    app.usr = usr(dict(me.data))
+    return get_usr(app.usr.fetch_first_name())#jsonify(me.data)
 
 
 @linkedin.tokengetter
