@@ -87,7 +87,7 @@ def logout():
     session.pop('linkedin_token', None)
     session.clear()
     logging.warning(session)
-    return url_for('login')
+    return redirect(url_for('login'))
 
 
 @app.route('/login/authorized')
