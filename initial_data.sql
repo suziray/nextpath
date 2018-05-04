@@ -31,18 +31,18 @@ INSERT INTO company (id, name, type, url, size) VALUES (2, 'Kensho Technologies'
 INSERT INTO company (id, name, type, url, size) VALUES (3, 'Google','Software Engineering,Technology,Advertisement,Product Management','https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png', 3);
 
 -- user project relationship 
-INSERT INTO usrprojectrel (id, usr_id, project_id, score, register_time, finish_time, content) VALUES (1, 4, 3, 98, '2018-05-03 10:00:54', '2018-05-04 10:00:00', 'I do  what to do');
-INSERT INTO usrprojectrel (id, usr_id, project_id, score, register_time, finish_time, content) VALUES (2, 2, 3, 98, '2018-05-03 10:05:00', '2018-05-04 11:00:00');
-INSERT INTO usrprojectrel (id, usr_id, project_id, score, register_time, finish_time, content) VALUES (3, 3, 1, 95, '2018-04-01 10:00:00', '2018-04-05 14:00:00');
-INSERT INTO usrprojectrel (id, usr_id, project_id, score, register_time, finish_time, content) VALUES (4, 1, 1, 95, '2018-04-01 11:00:00', '2018-05-01 15:00:00');
+INSERT INTO usrprojectrel (id, usr_id, project_id, score, register_time, finish_time) VALUES (1, 4, 3, 98, '2018-05-03 10:00:54', '2018-05-04 10:00:00');
+INSERT INTO usrprojectrel (id, usr_id, project_id, score, register_time, finish_time) VALUES (2, 2, 3, 98, '2018-05-03 10:05:00', '2018-05-04 11:00:00');
+INSERT INTO usrprojectrel (id, usr_id, project_id, score, register_time, finish_time) VALUES (3, 3, 1, 95, '2018-04-01 10:00:00', '2018-04-05 14:00:00');
+INSERT INTO usrprojectrel (id, usr_id, project_id, score, register_time, finish_time) VALUES (4, 1, 1, 95, '2018-04-01 11:00:00', '2018-05-01 15:00:00');
 
 -- company project relationship
-INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time) VALUES (1,3,3, '2018-02-02 08:00:00', '2018-02-02 12:00:00', '2018-10-05 12:00:00');
-INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time) VALUES (2,1,2, '2018-03-01 09:00:00', '2018-03-01 12:00:00', '2018-09-01 12:00:00');
-INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time) VALUES (3,2,1, '2018-01-01 07:00:00','2018-01-01 9:00:00', '2018-12-05 12:00:00');
-INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time) VALUES (4,3,4, '2018-01-01 07:00:00','2018-01-01 9:00:00', '2018-12-05 12:00:00');
-INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time) VALUES (5,3,5, '2018-01-01 07:00:00','2018-01-01 9:00:00', '2018-12-05 12:00:00');
-INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time) VALUES (6,1,6, '2018-06-01 07:00:00','2018-06-01 9:30:00', '2018-12-05 12:00:00');
+INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time, time_limit) VALUES (1,3,3, '2018-02-02 08:00:00', '2018-02-02 12:00:00', '2018-10-05 12:00:00',24);
+INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time, time_limit) VALUES (2,1,2, '2018-03-01 09:00:00', '2018-03-01 12:00:00', '2018-09-01 12:00:00',48);
+INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time, time_limit) VALUES (3,2,1, '2018-01-01 07:00:00','2018-01-01 9:00:00', '2018-12-05 12:00:00',12);
+INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time, time_limit) VALUES (4,3,4, '2018-01-01 07:00:00','2018-01-01 9:00:00', '2018-12-05 12:00:00',5);
+INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time, time_limit) VALUES (5,3,5, '2018-01-01 07:00:00','2018-01-01 9:00:00', '2018-12-05 12:00:00',2);
+INSERT INTO companyprojectrel (id, company_id, project_id, list_time, start_time, expire_time, time_limit) VALUES (6,1,6, '2018-06-01 07:00:00','2018-06-01 9:30:00', '2018-12-05 12:00:00',1);
 
 
 

@@ -40,7 +40,8 @@ create table usrprojectrel (
   project_id integer REFERENCES project (id),
   score decimal,
   register_time timestamp not null,
-  finish_time timestamp
+  finish_time timestamp,
+  content text
 );
 
 create table companyprojectrel (

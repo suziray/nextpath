@@ -40,11 +40,11 @@ heroku config:set PYTHONPATH=nextpath
 ##### 6. Initialize the Database
 ```bash
 # Clear database
-heroku pg:reset DATABASE --confirm ct-nextpath
+heroku pg:reset DATABASE --app ct-nextpath --confirm ct-nextpath
 # Create the initial schema
-heroku pg:psql < schema.sql
+heroku pg:psql < schema.sql --app ct-nextpath
 # Load some initial testing data
-heroku pg:psql < initial_data.sql
+heroku pg:psql < initial_data.sql --app ct-nextpath 
 ```
 
 ##### 7. Deploy & Profit

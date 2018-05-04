@@ -158,7 +158,7 @@ def challenges():
         me = linkedin.get('people/~')
         session['name'] = usr(dict(me.data)).fetch_first_name()
         cur = g.db_conn.cursor()
-        sql = "SELECT project.title, project.skill, project.description, companyprojectrel.start_time, companyprojectrel.expire_time, company.url FROM project,companyprojectrel,company where project.id=companyprojectrel.project_id AND companyprojectrel.company_id=company.id"
+        sql = "SELECT project.title, project.skill, project.description, companyprojectrel.start_time, companyprojectrel.expire_time, company.url, companyprojectrel.time_limit FROM project,companyprojectrel,company where project.id=companyprojectrel.project_id AND companyprojectrel.company_id=company.id"
         cur.execute(sql)
         projects = cur.fetchall()
         sql = "SELECT experience.tags FROM experience,usr WHERE experience.usr_id=usr.id AND usr.first_name= '" + session['name'] + "'"
