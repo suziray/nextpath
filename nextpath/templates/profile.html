@@ -34,7 +34,7 @@
             {% for exp in experiences %}
               <li>title{{ exp[0] }} - <b>company{{ exp[1] }}</b> - <b>duration{{ exp[2] }}</b> - <b>description{{ exp[3] }}</b>
               {% for t in exp[4] %}
-                - <b>tags{{ t }}</b>
+                - <b>{{ t }}</b>
               {% endfor %}
               </li>
             {% endfor %}
