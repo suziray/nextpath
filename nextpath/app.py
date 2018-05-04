@@ -41,8 +41,9 @@ def get_usr(first_name):
 def match(usr_tags, chg_skills):
     chg_skills = chg_skills.split(',')
     for tags in usr_tags:
-        ts = tags.split(',')
-        for t in ts:
+        logging.warning(tags)
+        # ts = tags.split(',')
+        for t in tags:
             for s in chg_skills:
                 if t == s:
                     return True
@@ -147,10 +148,10 @@ def challenges():
         projects = cur.fetchall()
         sql = "SELECT experience.tags FROM experience,usr WHERE experience.usr_id=usr.id AND usr.first_name= '" + session['name'] + "'"
         cur.execute(sql)
-        tags = cur.fetchall()
+        usr_tags = cur.fetchall()
         valid_projects = []
         for proj in projects:
-            if match(tags, proj[1]):
+            if match(usr_tags, proj[1]):
                 valid_projects.append(proj)
         logging.warning(valid_projects)
         return render_template('profile.html', challenges=valid_projects)
