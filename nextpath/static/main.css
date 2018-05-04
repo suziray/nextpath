@@ -250,3 +250,17 @@ span.tag {
     list-style-type: none !important;
     position:relative;
 }
+
+.score {
+  border: 2px solid #38b96a;
+  float: left;
+  padding: 11px 0 0 0;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 1.2;
+  color: #38b96a;
+  font-weight: 700;
+  font-size: 11px;
+}
